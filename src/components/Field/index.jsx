@@ -25,13 +25,14 @@ const Label = styled.label`
 
 const Field = ({
   label,
+  name,
   ...props
 }) => {
-  const [field, meta] = useField(props);
+  const [field, meta] = useField(name);
   return (
     <FormContainer>
       <Label>{label}</Label>
-      <Input type="input" {...field} />
+      <Input type="input" {...field} {...props} />
       {meta.touched && meta.error ? (
         <div className="error">{meta.error}</div>
       ) : null}

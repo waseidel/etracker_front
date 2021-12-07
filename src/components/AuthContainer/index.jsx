@@ -1,11 +1,35 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import tw from 'twin.macro';
 
-const AuthContainer = styled
+const StyledAuthContainer = styled.div`
+  ${tw`
+    h-screen 
+    flex
+    items-center
+    justify-center
+    flex-col
+    bg-gray-100
+  `}
+`;
+
+const StyledAuthForm = styled.div`
+  ${tw`
+    flex
+    flex-col
+    justify-center
+    items-center
+    h-screen
+    w-screen
+    bg-gray-100
+    overflow-hidden
+`}
+`
+
 const AuthContainer = ({ children }) => {
   return (
-    <div className="auth-container">
-      <div className="auth-container__content">{children}</div>
-    </div>
+    <StyledAuthContainer>
+      <StyledAuthForm>{children}</StyledAuthForm>
+    </StyledAuthContainer>
   );
 };
 
